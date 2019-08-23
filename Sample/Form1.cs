@@ -15,6 +15,7 @@ namespace Sample
         public Form1()
         {
             InitializeComponent();
+            this.panel1.Controls.Add(new View.MainView());
         }
     }
 }
