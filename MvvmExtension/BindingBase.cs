@@ -20,7 +20,7 @@ namespace MvvmExtension
                 if (Application.OpenForms.Count == 0) return;
                 Application.OpenForms[0]?.Invoke(new Action(() =>
                 {
-                    PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
                 }));
             }
         }

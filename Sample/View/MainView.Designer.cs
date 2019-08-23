@@ -28,42 +28,55 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Page1 = new System.Windows.Forms.Button();
+            this.Page2 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // textBox1
+            // Page1
             // 
-            this.textBox1.Location = new System.Drawing.Point(20, 42);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 0;
+            this.Page1.Location = new System.Drawing.Point(75, 342);
+            this.Page1.Name = "Page1";
+            this.Page1.Size = new System.Drawing.Size(75, 23);
+            this.Page1.TabIndex = 1;
+            this.Page1.Text = "页面1";
+            this.Page1.UseVisualStyleBackColor = true;
+            this.Page1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button1
+            // Page2
             // 
-            this.button1.Location = new System.Drawing.Point(20, 90);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Page2.Location = new System.Drawing.Point(426, 342);
+            this.Page2.Name = "Page2";
+            this.Page2.Size = new System.Drawing.Size(75, 23);
+            this.Page2.TabIndex = 2;
+            this.Page2.Text = "页面2";
+            this.Page2.UseVisualStyleBackColor = true;
+            this.Page2.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(603, 309);
+            this.panel1.TabIndex = 3;
             // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.Page2);
+            this.Controls.Add(this.Page1);
             this.Name = "MainView";
+            this.Size = new System.Drawing.Size(603, 388);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Page1;
+        private System.Windows.Forms.Button Page2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

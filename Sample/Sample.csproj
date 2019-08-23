@@ -56,11 +56,25 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\Page1ViewModel.cs" />
+    <Compile Include="ViewModel\Page2ViewModel.cs" />
     <Compile Include="View\MainView.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="View\MainView.Designer.cs">
       <DependentUpon>MainView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Page1View.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Page1View.Designer.cs">
+      <DependentUpon>Page1View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Page2View.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Page2View.Designer.cs">
+      <DependentUpon>Page2View.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -76,6 +90,12 @@
     </Compile>
     <EmbeddedResource Include="View\MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Page1View.resx">
+      <DependentUpon>Page1View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Page2View.resx">
+      <DependentUpon>Page2View.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

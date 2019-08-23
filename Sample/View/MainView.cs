@@ -17,8 +17,26 @@ namespace Sample.View
         public MainView()
         {
             InitializeComponent();
-            textBox1.Binding("Text", this.MainVM, "User.Name");
+            //textBox1.Binding("Text", this.MainVM, "User.Name");
             MainVM.ShowMessageBox = new Notification<bool, string>(this.showMessageBox);
+            MainVM.ChangePage = new Notification<string>(this.ChangePage);
+        }
+        private void ChangePage(string pageName)
+        {
+            this.panel1.Controls.Clear();
+            Control control=null;
+            switch (pageName)
+            {
+                case "Page1":
+                    control = new Page1View() { Dock=DockStyle.Fill};
+                    break;
+                case "Page2":
+                    control = new Page2View() { Dock = DockStyle.Fill };
+                    break;
+                default:
+                    break;
+            }
+            this.panel1.Controls.Add(control);
         }
         private bool showMessageBox(string str)
         {
@@ -27,7 +45,7 @@ namespace Sample.View
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            MainVM.UpdateName();
+            MainVM.UpdateName((sender as Button).Name);
         }
     }
 }

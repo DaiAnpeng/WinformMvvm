@@ -13,13 +13,13 @@ namespace Sample.ViewModel
     {
         public UserModel User { set; get; } = new UserModel();
         public Notification<bool, string> ShowMessageBox { set; get; }
-        public void UpdateName()
+        public Notification<string> ChangePage { set; get; }
+        public string CurrentPage { set; get; }
+        public void UpdateName(string pageName)
         {
-            var result = ShowMessageBox("ceshi");
+            var result = ShowMessageBox("是否切换页面");
             if (!result) return;
-            new Thread(() => {
-                User.Name = DateTime.Now.ToString("mmss");
-            }).Start();
+            ChangePage(pageName);
         }
     }
 }
