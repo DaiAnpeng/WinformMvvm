@@ -17,7 +17,7 @@ namespace Sample.View
         public Page1View()
         {
             InitializeComponent();
-            label1.Binding("Text",ViewModel,"PageName");
+            label1.TwoWayBinding("Text",ViewModel,"PageName");
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Sample.ViewModel
         public string PageName { get => pageName; set => SetValue(ref pageName, value); }
         public Page1ViewModel()
         {
-            PageName = "页面2";
+            PageName = "页面1";
         }
     }
 }
