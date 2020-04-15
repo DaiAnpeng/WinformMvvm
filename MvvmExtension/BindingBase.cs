@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,10 +19,14 @@ namespace MvvmExtension
             {
                 target = value;
                 if (Application.OpenForms.Count == 0) return;
-                Application.OpenForms[0]?.Invoke(new Action(() =>
+                var form = Application.OpenForms[0];
+                if (form != null && form.IsHandleCreated)
                 {
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-                }));
+                    form.Invoke(new Action(() =>
+                    {
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+                    }));
+                }
             }
         }
         public event PropertyChangedEventHandler PropertyChanged;

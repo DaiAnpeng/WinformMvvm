@@ -11,7 +11,10 @@ namespace Sample.Model
     {
         private string id;
         private string name;
-        public string Id { get => id; set => SetValue(ref id, value); }
+        public string Id { 
+            get => id; 
+            set => SetValue(ref id, value); 
+        }
         public string Name { get => name; set => SetValue(ref name, value); }
     }
 }

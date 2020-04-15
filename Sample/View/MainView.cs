@@ -17,6 +17,7 @@ namespace Sample.View
         public MainView()
         {
             InitializeComponent();
+            MainVM.User.Id = DateTime.Now.ToString();
             //textBox1.Binding("Text", this.MainVM, "User.Name");
             MainVM.ShowMessageBox = new Notification<bool, string>(this.showMessageBox);
             MainVM.ChangePage = new Notification<string>(this.ChangePage);
