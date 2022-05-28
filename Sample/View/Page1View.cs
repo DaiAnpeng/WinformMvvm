@@ -13,11 +13,12 @@ namespace Sample.View
 {
     public partial class Page1View : UserControl
     {
-        public object ViewModel { set; get; } = new ViewModel.Page1ViewModel();
+        public ViewModel.Page1ViewModel ViewModel { set; get; } = new ViewModel.Page1ViewModel();
         public Page1View()
         {
             InitializeComponent();
-            label1.TwoWayBinding("Text",ViewModel,"PageName");
+            label1.TwoWayBinding(nameof(label1.Text), ViewModel, nameof(ViewModel.PageName));
+            label3.OneWayBinding(nameof(label3.Text), ViewModel, nameof(ViewModel.CurrentTime),true,"yyyy-MM-dd HH:mm:ss");
         }
     }
 }

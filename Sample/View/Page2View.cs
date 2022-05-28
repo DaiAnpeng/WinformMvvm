@@ -13,11 +13,11 @@ namespace Sample.View
 {
     public partial class Page2View : UserControl
     {
-        public object ViewModel { set; get; } = new ViewModel.Page2ViewModel();
+        public ViewModel.Page2ViewModel ViewModel { set; get; } = new ViewModel.Page2ViewModel();
         public Page2View()
         {
             InitializeComponent();
-            label1.TwoWayBinding("Text", ViewModel, "PageName");
+            label1.TwoWayBinding(nameof(label1.Text), ViewModel, nameof(ViewModel.PageName));
         }
     }
 }
